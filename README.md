@@ -1,2 +1,0 @@
-# ASCON_HASH_resource_estimation
-为《ASCON-HASH杂凑函数的高效量子实现线路》提供的资源估算程序
