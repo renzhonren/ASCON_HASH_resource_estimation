@@ -1,5 +1,4 @@
-"""ProjectQ estimates for the three ASCON-HASH circuits.
-
+"""
 The function layout follows ASCON_quantum-master/.../ASCON_HASH.py: each round
 is built from constant addition, a substitution layer, and a linear layer.
 Use --scheme to select QAND out-of-place, Amy out-of-place, or Amy in-place.
@@ -344,9 +343,6 @@ def Estimate_Outplace(method="amy", shallow=False,
             forwards = list(range(start, end + 1))
             inverses = list(range(start - 2, start - 10, -1))
             if group == 11:
-                # Round 91 needs a new state register. Inverses 89..85
-                # provide the five registers reused by rounds 92..96;
-                # inverses 84..82 free no register that is used later.
                 inverses = inverses[:len(forwards) - 1]
             for step in range(max(len(forwards), len(inverses))):
                 if step < len(forwards):
